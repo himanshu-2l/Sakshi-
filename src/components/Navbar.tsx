@@ -29,7 +29,7 @@ export function Navbar() {
               Sakshi
             </div>
             <div className="text-[11px] font-medium text-[#586E61]">
-              SIH26232 · Cold-Chain Witness
+              Cryptographic Cold-Chain Witness
             </div>
           </div>
         </Link>

@@ -26,7 +26,12 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Sakshi — Farm-to-Fork Cryptographic Cold-Chain Witness",
   description:
-    "Low-cost offline-first IoT blockchain nodes with hardware ECDSA P-256 signing, ethylene & cold-chain telemetry, and GS1 EPCIS 2.0 traceability (SIH26232).",
+    "Low-cost offline-first IoT blockchain nodes with hardware ECDSA P-256 signing, ethylene & cold-chain telemetry, and GS1 EPCIS 2.0 traceability.",
+  openGraph: {
+    title: "Sakshi — Cryptographic Cold-Chain Traceability",
+    description: "Every consignment carries its own witness.",
+    images: ["/sakshi-banner.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -50,7 +55,7 @@ export default function RootLayout({
                 S
               </span>
               <span>
-                <strong className="text-[#0E1B14] font-semibold">Sakshi 2.0</strong> · Team Upper Moons (ID 165001) · SIH26232 (MoFPI)
+                <strong className="text-[#0E1B14] font-semibold">Sakshi</strong> · Offline-First Cold-Chain Traceability Platform
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-5 text-xs font-medium">

@@ -187,16 +187,27 @@ export default async function HomePage() {
       {/* Deep Canopy Dark Band — Trust Starts at the Sensor */}
       <section className="bg-[#0B1D16] text-[#F6F7F4] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="max-w-3xl space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              Trust starts at the sensor, not at the blockchain.
-            </h2>
-            <p className="text-[#B8C9BF] text-base sm:text-lg leading-relaxed">
-              A blockchain only guarantees that stored records weren&apos;t altered after
-              upload. Sakshi closes the physical-to-digital gap by hashing, chaining, and
-              signing every sensor reading inside an ATECC608B secure element before it
-              ever touches cellular networks.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-6 space-y-4">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+                Trust starts at the sensor, not at the blockchain.
+              </h2>
+              <p className="text-[#B8C9BF] text-base sm:text-lg leading-relaxed">
+                A blockchain only guarantees that stored records weren&apos;t altered after
+                upload. Sakshi closes the physical-to-digital gap by hashing, chaining, and
+                signing every sensor reading inside an ATECC608B secure element before it
+                ever touches cellular networks.
+              </p>
+            </div>
+            <div className="lg:col-span-6">
+              <div className="rounded-2xl overflow-hidden border border-[#1E4233]">
+                <img
+                  src="/sakshi-banner.jpg"
+                  alt="Sakshi IP67 solar-assisted cold-chain hardware node"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">

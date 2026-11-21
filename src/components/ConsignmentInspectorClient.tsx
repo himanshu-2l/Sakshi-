@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   WifiOff,
 } from "lucide-react";
+import { buildEpcisDocument } from "@/lib/epcis";
 import { verifyHashChain } from "@/lib/crypto";
 import type { ChainVerificationReport, ConsignmentBundle } from "@/lib/types";
 import { CryptoStatusBadge } from "./CryptoStatusBadge";
@@ -28,6 +29,7 @@ export function ConsignmentInspectorClient({
     null
   );
   const [verifying, setVerifying] = useState(false);
+  const [showEpcisPreview, setShowEpcisPreview] = useState(false);
   const [origin, setOrigin] = useState("");
 
   useEffect(() => {
@@ -195,6 +197,34 @@ export function ConsignmentInspectorClient({
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Live GS1 EPCIS 2.0 JSON-LD Preview Panel */}
+      <div className="instrument-card overflow-hidden">
+        <div className="px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 className="text-base font-bold text-[#0E1B14]">
+              GS1 EPCIS 2.0 JSON-LD Payload Preview
+            </h2>
+            <p className="text-xs text-[#586E61]">
+              Inspect the exact standards-compliant <span className="font-mono-tabular">sensorElementList</span> exported for global customs &amp; buyers.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setShowEpcisPreview((v) => !v)}
+            className="px-3.5 py-2 rounded-xl bg-[#ECEFE9] hover:bg-[#DFE5DC] text-xs font-semibold text-[#0E1B14] transition-colors self-start sm:self-auto"
+          >
+            {showEpcisPreview ? "Hide JSON-LD" : "Inspect EPCIS 2.0 JSON-LD"}
+          </button>
+        </div>
+        {showEpcisPreview && (
+          <div className="border-t border-[#D8E0D5] bg-[#0B1D16] text-[#E6F5EE] p-5 overflow-x-auto">
+            <pre className="font-mono-tabular text-xs leading-relaxed">
+              {JSON.stringify(buildEpcisDocument(bundle), null, 2)}
+            </pre>
+          </div>
+        )}
       </div>
 
       {/* Signed Frame Table */}

@@ -62,9 +62,8 @@ export default function ResearchPage() {
           Engineering Validation, Power Budget &amp; BOM Archive
         </h1>
         <p className="text-sm sm:text-base text-[#3B4F43] leading-relaxed">
-          Honest hardware economics and field-physics design decisions behind Sakshi
-          (SIH26232), built for Ministry of Food Processing Industries (MoFPI) and
-          exporter evaluation.
+          Transparent hardware economics, sub-zero LTO battery safety, and field-physics
+          design decisions behind the Sakshi cold-chain witness node.
         </p>
       </div>
 
